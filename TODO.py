@@ -1,5 +1,5 @@
-def to_do():
-    listo = []
+def to_do(listo = [], list_of_commands=[]):
+    
 
     while True:
         print("1. Add Task")
@@ -32,7 +32,7 @@ def to_do():
             print("Invalid choice.")
             print("-"*50)
 
-    return listo
+    return listo, list_of_commands
 
 
 # edits
