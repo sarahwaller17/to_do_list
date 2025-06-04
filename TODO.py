@@ -1,4 +1,6 @@
-def to_do(listo = [], list_of_commands=[]):
+from typing import Sequence
+
+def to_do(listo = []: Sequence [str,str]):
     
 
     while True:
@@ -32,7 +34,7 @@ def to_do(listo = [], list_of_commands=[]):
             print("Invalid choice.")
             print("-"*50)
 
-    return listo, list_of_commands
+    return listo
 
 
 # edits
