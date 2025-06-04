@@ -1,9 +1,18 @@
-from typing import Sequence
 
-def to_do(listo = []: Sequence [str,str]):
+
+def to_do(list_of_commands: list=[]) -> None:
+    """
+    A to do application that captures tasks and allows them to be marked off. 
     
+    Args:
+        list_of_commands (list, optional): A list of commands to be executed in sequential order. 
+        
+    Returns:
+        None
+    """
 
-    while True:
+    listo: list = []
+    for command in list_of_commands:
         print("1. Add Task")
         print("2. View Tasks")
         print("3. Mark Task as Done")
@@ -35,6 +44,3 @@ def to_do(listo = []: Sequence [str,str]):
             print("-"*50)
 
     return listo
-
-
-# edits
