@@ -1,4 +1,12 @@
 import logging
+import argparse
+
+parser = argparse.ArgumentParser()
+
+# add arguments?
+
+
+
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
