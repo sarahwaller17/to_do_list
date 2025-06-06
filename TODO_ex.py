@@ -38,15 +38,18 @@ class ToDoList:
     def add_task(self, task: str) -> None:
         """Adds a task to the to-do list."""
         self.tasks.append(task)
+        logger.info('Task added successfully!')
 
     def view_tasks(self) -> list:
         """Returns the list of tasks."""
+        logger.info('In task view')
         return self.tasks
 
     def mark_task_done(self, task_index: int) -> None:
         """Marks a task as done by removing it from the list."""
         if 0 <= task_index < len(self.tasks):
             self.tasks.pop(task_index)
+            logger.info('Task marked complete')
         else:
             print("Invalid task index")
 
