@@ -6,21 +6,22 @@ parser = argparse.ArgumentParser()
 # add arguments?
 
 
-
-
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
-file_handler = logging.FileHandler('todo.log')
+file_handler = logging.FileHandler("todo.log")
 file_handler.setLevel(logging.DEBUG)
-file_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+file_handler.setFormatter(
+    logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
+)
 
 stream_handler = logging.StreamHandler()
 stream_handler.setLevel(logging.DEBUG)
-stream_handler.setFormatter(logging.Formatter('%(levelname)s - %(message)s'))
+stream_handler.setFormatter(logging.Formatter("%(levelname)s - %(message)s"))
 
 logger.addHandler(file_handler)
 logger.addHandler(stream_handler)
+
 
 class ToDoList:
     """
@@ -49,6 +50,7 @@ class ToDoList:
         else:
             print("Invalid task index")
 
+
 def main():
     todo = ToDoList()
 
@@ -61,25 +63,26 @@ def main():
 
         choice = input("Enter your choice (1-4): ")
 
-        if choice == '1':
+        if choice == "1":
             tasks = todo.view_tasks()
             if not tasks:
                 print("No tasks in the list.")
             else:
                 for i, task in enumerate(tasks):
                     print(f"{i}. {task}")
-        elif choice == '2':
+        elif choice == "2":
             task = input("Enter the task: ")
             todo.add_task(task)
             print("Task added.")
-        elif choice == '3':
+        elif choice == "3":
             index = int(input("Enter the index of the task to mark as done: "))
             todo.mark_task_done(index)
-        elif choice == '4':
+        elif choice == "4":
             print("Goodbye!")
             break
         else:
             print("Invalid choice. Try again.")
+
 
 if __name__ == "__main__":
     main()
